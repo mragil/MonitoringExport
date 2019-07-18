@@ -1,6 +1,7 @@
 package com.example.monitoringexport;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -37,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    public static MainActivity ma;
+    public MainActivity ma;
+    private String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        SharedPreferences sharedPreferences = getSharedPreferences("UserInfo",MODE_PRIVATE);
+        token = sharedPreferences.getString("userInfo","No Token");
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -87,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void refresh() {
-        Call<List<User>> userCall = mApiInterface.getUser();
+        Call<List<User>> userCall = mApiInterface.getUser(token);
         userCall.enqueue(new Callback<List<User>>() {
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>>

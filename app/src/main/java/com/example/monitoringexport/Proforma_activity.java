@@ -1,6 +1,7 @@
 package com.example.monitoringexport;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -29,21 +30,20 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Proforma_activity extends AppCompatActivity {
-    private DrawerLayout dl;
     private ActionBarDrawerToggle t;
-    private NavigationView nv;
     ApiInterface mApiInterface;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     Button btn_add;
+    private String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proforma);
 
-        dl = findViewById(R.id.activity_proforma);
+        DrawerLayout dl = findViewById(R.id.activity_proforma);
         t = new ActionBarDrawerToggle(this, dl,R.string.Open, R.string.Close);
 
         dl.addDrawerListener(t);
@@ -51,12 +51,14 @@ public class Proforma_activity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("UserInfo",MODE_PRIVATE);
+        token = sharedPreferences.getString("userInfo","No Token");
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mApiInterface = ApiClient.buildService(ApiInterface.class);
 
-        nv = (NavigationView)findViewById(R.id.nv);
+        NavigationView nv = (NavigationView) findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -92,7 +94,7 @@ public class Proforma_activity extends AppCompatActivity {
     }
 
     public void refresh() {
-        Call<List<Proforma>> proformaCall = mApiInterface.getProforma();
+        Call<List<Proforma>> proformaCall = mApiInterface.getProforma(token);
         proformaCall.enqueue(new Callback<List<Proforma>>() {
             @Override
             public void onResponse(Call<List<Proforma>> call, Response<List<Proforma>>

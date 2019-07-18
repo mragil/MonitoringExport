@@ -1,19 +1,40 @@
 package com.example.monitoringexport.Model;
 
-public interface Session {
-    boolean isLoggedIn();
+public class Session {
+    private int id_user;
+    private String nama;
+    private  boolean success;
+    private  String message;
+    private String token;
 
-    void saveToken(String token);
+    public String getToken() {
+        return token;
+    }
 
-    String getToken();
+    public void setToken(String token) {
+        this.token = token;
+    }
 
-    void saveEmail(String email);
+    public String getMessage() {
+        return message;
+    }
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-    String getEmail();
+    public int getId_user() {
+        return id_user;
+    }
 
-    void savePassword(String password);
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
 
-    String getPassword();
+    public String getNama() {
+        return nama;
+    }
 
-    void invalidate();
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
 }
