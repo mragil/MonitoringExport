@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Monitoring Export</string>
+    <string name="hint_input_email">Masukkan Email Anda</string>
+    <string name="hint_input_pw">Masukkan Password Anda</string>
+    <string name="login">Login</string>
+    <string name="monitoring_export">Monitoring Export</string>
+    <string name="Open">Monitoring Export</string>
+    <string name="Close">Monitoring Export</string>
+</resources>

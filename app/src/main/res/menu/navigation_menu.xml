@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="Home"/>
+    <item android:id="@+id/proforma"
+        android:icon="@drawable/ic_proforma"
+        android:title="PEB Proforma"/>
+    <item android:id="@+id/commercial"
+        android:icon="@drawable/ic_commercial"
+        android:title="PEB Commercial"/>
+    <item android:id="@+id/laporan"
+        android:icon="@drawable/ic_laporan"
+        android:title="Laporan"/>
+
+</menu>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:alpha="0.9">
+
+    <ImageView
+        android:id="@+id/logo_sh"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
+        android:layout_marginTop="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        />
+
+    <TextView
+        android:id="@+id/monitoringExport"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/logo_sh"
+        android:text="@string/monitoring_export"
+        android:gravity="center"
+        android:textSize="25dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/AddNamaProduk"
+        android:ems="10"
+        android:background="@drawable/rounded_edittext"
+        android:cursorVisible="true"
+        android:textCursorDrawable="@null"
+        android:textSize="20sp"
+        android:textColor="#333333"
+        android:drawablePadding="25dp"
+        android:hint="@string/hint_input_email"
+        android:textColorHint="#D8797070"
+        android:paddingTop="5dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="20dp"
+        android:drawableLeft="@drawable/ic_username"
+        android:fontFamily="sans-serif"
+        android:layout_below="@id/monitoringExport"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/AddNamaProduk"
+        android:background="#CCCCCC">
+    </View>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/Addtanggal_peb"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:background="@drawable/rounded_edittext"
+        android:cursorVisible="true"
+        android:textCursorDrawable="@null"
+        android:textSize="20sp"
+        android:textColor="#333333"
+        android:drawablePadding="25dp"
+        android:hint="@string/hint_input_pw"
+        android:textColorHint="#D8797070"
+        android:paddingTop="5dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingStart="20dp"
+        android:drawableLeft="@drawable/ic_password"
+        android:fontFamily="sans-serif"
+        android:layout_below="@id/AddNamaProduk"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/Addtanggal_peb"
+        android:background="#CCCCCC">
+    </View>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Addtanggal_peb"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif"
+        android:text="@string/login"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

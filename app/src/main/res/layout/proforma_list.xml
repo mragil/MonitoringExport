@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/tvId_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Id Data"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/tvNama_produk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nama Produk"
+            android:textSize="15sp"
+            android:layout_below="@id/tvId_data"
+            />
+        <TextView
+            android:id="@+id/tvTgl_PEB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Tanggal PEB"
+            android:textSize="15sp"
+            android:layout_below="@id/tvNama_produk"
+            />
+        <TextView
+            android:id="@+id/tvPembuat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Pembuat"
+            android:textSize="15sp"
+            android:layout_below="@id/tvTgl_PEB"
+            />
+    </RelativeLayout>
+    <View
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+</LinearLayout>
